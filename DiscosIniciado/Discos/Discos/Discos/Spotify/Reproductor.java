@@ -1,8 +1,10 @@
+package DiscosIniciado.Discos.Discos.Discos.Spotify;
+
 import java.util.ArrayList;
 
 public class Reproductor {
 
-    ArrayList<CrearCancion> reproductor;
+    ArrayList<Cancion> reproductor;
      static Boolean reproduciendo;
 
     
