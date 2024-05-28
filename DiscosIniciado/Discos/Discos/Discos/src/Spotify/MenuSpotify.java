@@ -109,7 +109,7 @@ public class MenuSpotify {
         
             default:
 
-                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente");
+                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 6");
             
                 break;
         }
