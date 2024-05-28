@@ -128,14 +128,10 @@ public class MenuSpotify {
         String genero = scan.nextLine();
 
         System.out.print("Escriba la duración de la cancion en n:nn en estos terminos: ");
-        String Duracion =scan.nextLine();
-        String [] recorte_Duracion = Duracion.split(":");
-        String duracion1St = recorte_Duracion [0];
-        int duracionmin = Integer.parseInt(duracion1St);
-        duracionmin = duracionmin * 60;
-        String duracion2St = recorte_Duracion [1];
-        int duracionseg = Integer.parseInt(duracion2St);
-        int duracion = duracionmin + duracionseg;
+        String duracion1=scan.nextLine();
+        String seg[]=duracion1.split(":");
+        int duracion=Integer.parseInt(seg[1]) + Integer.parseInt(seg[0])*60 ;
+        System.out.println("la cancion dura "+duracion+" segundos");
 
         System.out.print("Desea agregar la cancion a la biblioteca del reproductor? (Si o No): ");
         String modificar = scan.nextLine();
