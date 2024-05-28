@@ -1,4 +1,4 @@
-package DiscosIniciado.Discos.Discos.Discos.Spotify;
+package src.Spotify;
 
 import java.util.ArrayList;
 

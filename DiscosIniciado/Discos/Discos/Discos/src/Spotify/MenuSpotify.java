@@ -1,4 +1,4 @@
-package Spotify;
+package src.Spotify;
 
 import java.util.ArrayList;
 import java.util.Scanner;
