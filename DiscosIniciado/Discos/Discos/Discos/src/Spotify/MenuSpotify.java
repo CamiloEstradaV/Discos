@@ -48,6 +48,7 @@ public class MenuSpotify {
         System.out.println("4 = Crear una lista de reproduccion de canciones");
         System.out.println("5 = Reproducir canciones/listas");
         System.out.println("6 = Mostrar listas creadas");
+        System.out.println("7 = Mostrar Todas las canciones(solo el nombre)");
 
         System.out.println("____________________________________________________________________");
         System.out.println("");
@@ -67,45 +68,62 @@ public class MenuSpotify {
 
                 System.exit(0);
 
-                break;
+            break;
             
             case 1:
 
                 Cancion();
-
-                break;
+                validarContinuar();
+            break;
 
             case 2:
 
                 elmCancion();
-                 
-                break;  
+                scan.nextLine();
+                validarContinuar();
+            break;  
             
             case 3:
 
                 agregarBibiloteca();
-                 
-                break;  
+                scan.nextLine();
+                validarContinuar();
+            break;  
 
             case 4:
 
                 CrearPlaylist();
-                 
-                break;  
+                scan.nextLine();
+                validarContinuar();
+            break;  
 
                 
             case 5:
 
                 ReproducirMusica();
-                 
-                break;  
+                scan.nextLine();
+                validarContinuar();
+            break;  
 
                 
             case 6:
 
                 MostrarListas();
-                 
-                break;  
+                scan.nextLine();
+                validarContinuar();
+            break;  
+
+
+            case 7:
+                if(CancionesCreadas.size()==0){
+                    System.out.println("No existen canciones en el reproductor");
+                }
+                else{
+                    allCanciones();
+                }
+                scan.nextLine();
+                validarContinuar();
+            break;
         
             default:
 
@@ -119,6 +137,7 @@ public class MenuSpotify {
     public static void Cancion(){
         
         System.out.print("Escriba el titulo de la cancion: ");
+        scan.nextLine();
         String titulo = scan.nextLine();
 
         System.out.print("Escriba el artista que interpreta esta cancion: ");
@@ -132,7 +151,6 @@ public class MenuSpotify {
         String seg[]=duracion1.split(":");
         int duracion=Integer.parseInt(seg[1]) + Integer.parseInt(seg[0])*60 ;
         System.out.println("la cancion dura "+duracion+" segundos");
-            System.out.println("cambio");
         System.out.print("Desea agregar la cancion a la biblioteca del reproductor? (Si o No): ");
         String modificar = scan.nextLine();
         
@@ -180,6 +198,11 @@ public class MenuSpotify {
     }
 
     public static void MostrarListas(){
+
+    }
+    public static void validarContinuar(){
+        System.out.println("\nPara continuar oprima ENTER");
+        scan.nextLine();
 
     }
 
