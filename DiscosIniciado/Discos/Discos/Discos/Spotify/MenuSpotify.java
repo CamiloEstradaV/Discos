@@ -1,4 +1,4 @@
-package DiscosIniciado.Discos.Discos.Discos.Spotify;
+package Spotify;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -9,7 +9,9 @@ public class MenuSpotify {
     static Cancion cancion;
     static ArrayList<Cancion> Biblioteca = new ArrayList<>();
     static ArrayList<Cancion> CancionesCreadas = new ArrayList<>();
+    static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
     static int canciones;
+
     //int cancionRandom = (int) (Math.random()*canciones); eso es para que el reproductor ponga las canciones de manera aleatoria
 
 
@@ -65,19 +67,50 @@ public class MenuSpotify {
 
                 System.exit(0);
 
-            break;
+                break;
             
             case 1:
 
                 Cancion();
 
-            break;
+                break;
 
             case 2:
+
+                EliminarCancion();
                  
-            break;    
+                break;  
+            
+            case 3:
+
+                agregarBibiloteca();
+                 
+                break;  
+
+            case 4:
+
+                CrearPlaylist();
+                 
+                break;  
+
+                
+            case 5:
+
+                ReproducirMusica();
+                 
+                break;  
+
+                
+            case 6:
+
+                MostrarListas();
+                 
+                break;  
         
             default:
+
+                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente");
+            
                 break;
         }
 
@@ -119,9 +152,28 @@ public class MenuSpotify {
         
     }
 
+    public static void EliminarCancion(){
+
+    }
+
     public static void agregarBibiloteca(){
+
+    }
+
+    public static void CrearPlaylist(){
+
+    }
+
+    public static void ReproducirMusica(){
 
 
     }
+
+    public static void MostrarListas(){
+
+    }
+
+
+
 
 }
