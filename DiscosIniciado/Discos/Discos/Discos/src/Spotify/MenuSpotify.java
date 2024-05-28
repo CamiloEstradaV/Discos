@@ -77,7 +77,7 @@ public class MenuSpotify {
 
             case 2:
 
-                EliminarCancion();
+                elmCancion();
                  
                 break;  
             
@@ -132,7 +132,7 @@ public class MenuSpotify {
         String seg[]=duracion1.split(":");
         int duracion=Integer.parseInt(seg[1]) + Integer.parseInt(seg[0])*60 ;
         System.out.println("la cancion dura "+duracion+" segundos");
-
+            System.out.println("cambio");
         System.out.print("Desea agregar la cancion a la biblioteca del reproductor? (Si o No): ");
         String modificar = scan.nextLine();
         
@@ -152,10 +152,19 @@ public class MenuSpotify {
 
         
     }
-
-    public static void EliminarCancion(){
-
+    public static void allCanciones(){
+        for (int  i= 0; i< CancionesCreadas.size(); ++i) {
+            System.out.println(i+1 + ". " + CancionesCreadas.get(i).getTitulo());
+        }
     }
+
+    public static void elmCancion(){
+       allCanciones();
+       System.out.println("Ingrese el numero de la cancion que desea borrar");
+       int posicionEliminar = scan.nextInt()-1;
+        CancionesCreadas.remove(posicionEliminar);
+    }
+    
 
     public static void agregarBibiloteca(){
 
