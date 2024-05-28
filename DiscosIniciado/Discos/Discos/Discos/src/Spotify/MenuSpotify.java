@@ -7,7 +7,7 @@ public class MenuSpotify {
 
     static Scanner scan = new Scanner(System.in);
     static Cancion cancion;
-    static ArrayList<Cancion> Biblioteca = new ArrayList<>();
+    static ArrayList<Cancion> colaReproduccion = new ArrayList<>();
     static ArrayList<Cancion> CancionesCreadas = new ArrayList<>();
     static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
     static int canciones;
@@ -127,7 +127,7 @@ public class MenuSpotify {
         
             default:
 
-                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 6");
+                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 7");
             
                 break;
         }
@@ -151,19 +151,22 @@ public class MenuSpotify {
         String seg[]=duracion1.split(":");
         int duracion=Integer.parseInt(seg[1]) + Integer.parseInt(seg[0])*60 ;
         System.out.println("la cancion dura "+duracion+" segundos");
-        System.out.print("Desea agregar la cancion a la biblioteca del reproductor? (Si o No): ");
+        System.out.print("Desea agregar la cancion a la cola de Reproduccion? (Si o No): ");
         String modificar = scan.nextLine();
         
         if (modificar.equals("No")) {
-
-            System.out.println("La cancion no ha sido guardada");
+            cancion = new Cancion(titulo, artista, genero, duracion);
+            CancionesCreadas.add(cancion);
+            System.out.println("\nLa cancion no ha sido agregada a la cola de reproduccion");
 
         }else{
 
             cancion = new Cancion(titulo, artista, genero, duracion);
             CancionesCreadas.add(cancion);
+            colaReproduccion.add(cancion);
             canciones++;
-
+            System.out.println("\nLa cancion ha sido agregada a la cola de reproduccion");
+            
             
 
         }
@@ -177,15 +180,19 @@ public class MenuSpotify {
     }
 
     public static void elmCancion(){
-       allCanciones();
-       System.out.println("Ingrese el numero de la cancion que desea borrar");
-       int posicionEliminar = scan.nextInt()-1;
+        allCanciones();
+        System.out.println("Ingrese el numero de la cancion que desea borrar");
+        int posicionEliminar = scan.nextInt()-1;
+        System.out.println("La cancion "+CancionesCreadas.get(posicionEliminar).getTitulo()+" Ha sido eliminada" );
         CancionesCreadas.remove(posicionEliminar);
     }
     
 
     public static void agregarBibiloteca(){
-
+        allCanciones();
+        System.out.println("Ingrese el numero de la cancion que quiere agregar a la Biblioteca del reproductor");
+        int aggBiblioteca = scan.nextInt()-1;
+        Biblioteca.add();
     }
 
     public static void CrearPlaylist(){
