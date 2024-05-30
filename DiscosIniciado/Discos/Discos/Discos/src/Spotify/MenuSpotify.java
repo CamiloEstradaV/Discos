@@ -192,7 +192,7 @@ public class MenuSpotify {
         allCanciones();
         System.out.println("Ingrese el numero de la cancion que quiere agregar a la Biblioteca del reproductor");
         int aggBiblioteca = scan.nextInt()-1;
-        Biblioteca.add();
+       // Biblioteca.add();
     }
 
     public static void CrearPlaylist(){
