@@ -21,11 +21,11 @@ public class Listas {
         this.nombreLista = nombreLista;
     }
 
-    public ArrayList<Cancion> getlistaGuardado() {
+    public ArrayList<Cancion> getListaGuardado() {
         return listaGuardado;
     }
 
-    public void setlistaGuardado(ArrayList<Cancion> listaGuardado) {
+    public void setListaGuardado(ArrayList<Cancion> listaGuardado) {
         this.listaGuardado = listaGuardado;
     }
 
