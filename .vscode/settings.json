@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\User\\Desktop\\codigos\\jaco-mp3-player-0.9.3\\jaco-mp3-player-0.9.3.jar"
+        "c:\\Users\\User\\Desktop\\codigos\\jaco-mp3-player-0.9.3\\jaco-mp3-player-0.9.3.jar",
+        "c:\\Users\\User\\Desktop\\codigos\\jar_files\\tritonus-share-0.3.7-2.jar"
     ]
 }

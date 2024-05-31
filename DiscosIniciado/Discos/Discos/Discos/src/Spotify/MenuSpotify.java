@@ -15,16 +15,6 @@ public class MenuSpotify {
 
     public static void main(String[] args) throws Exception {
 
-        do {
-
-            Menu();
-
-        } while (true);
-
-    }
-
-    public static void Menu() {
-
         System.out.println("");
         System.out.println("____________________________________________________________________");
         System.out.println("");
@@ -35,6 +25,18 @@ public class MenuSpotify {
         System.out.println("");
 
         System.out.println("");
+
+        do {
+
+            Menu();
+
+        } while (true);
+
+    }
+
+    public static void Menu() {
+
+        
         System.out.println("");
         System.out.println("____________________________________________________________________");
         System.out.println("");
@@ -300,7 +302,7 @@ public class MenuSpotify {
         
         
 
-
+        reproducir.close();
 
 
     }

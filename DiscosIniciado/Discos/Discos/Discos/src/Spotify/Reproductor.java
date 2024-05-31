@@ -163,7 +163,7 @@ public class Reproductor {
     public static void EscucharCancion (String titulo) {
 
         cargarCanciones();
-        boolean cancionEncotrada = false;
+
         int recorrido = 0;
         int tamaño = playlist.size();
         
