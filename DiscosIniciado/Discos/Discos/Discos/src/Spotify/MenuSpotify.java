@@ -12,6 +12,7 @@ public class MenuSpotify {
     static ArrayList<Cancion> CancionesCreadas = new ArrayList<>();
     static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
     static int canciones;
+    static int repetir;
 
     public static void main(String[] args) throws Exception {
 
@@ -26,38 +27,57 @@ public class MenuSpotify {
 
         System.out.println("");
 
-        do {
+
+        repetir = -1;
+
+        for (int i = 0; i >= repetir; i++) {
 
             Menu();
 
-        } while (true);
+            repetir++;
+        }
+
+        
+
+           
+
+     
 
     }
 
     public static void Menu() {
-
-        
-        System.out.println("");
-        System.out.println("____________________________________________________________________");
-        System.out.println("");
-        System.out.println("0 = Salir");
-        System.out.println("1 = Crear una canción");
-        System.out.println("2 = Eliminar una canción");
-        System.out.println("3 = Agregar canciones a la biblioteca");
-        System.out.println("4 = Crear una lista de reproduccion de canciones");
-        System.out.println("5 = Reproducir canciones/listas");
-        System.out.println("6 = Mostrar listas creadas");
-        System.out.println("7 = Mostrar Todas las canciones(solo el nombre)");
-
-        System.out.println("____________________________________________________________________");
-        System.out.println("");
-
-        System.out.print("Digite el procedimiento que desee realizar: ");
-        int opcion = scan.nextInt();
-
-        acciones(opcion);
-
+        boolean continuar = true; // Variable booleana para controlar si se debe continuar en el menú
+    
+        while (continuar) { // Utilizar la variable booleana para controlar el bucle
+            System.out.println("");
+            System.out.println("____________________________________________________________________");
+            System.out.println("");
+            System.out.println("0 = Salir");
+            System.out.println("1 = Crear una canción");
+            System.out.println("2 = Eliminar una canción");
+            System.out.println("3 = Agregar canciones a la biblioteca");
+            System.out.println("4 = Crear una lista de reproduccion de canciones");
+            System.out.println("5 = Reproducir canciones/listas");
+            System.out.println("6 = Mostrar listas creadas");
+            System.out.println("7 = Mostrar Todas las canciones(solo el nombre)");
+            System.out.println("____________________________________________________________________");
+            System.out.println("");
+            System.out.print("Digite el procedimiento que desee realizar: ");
+    
+            if (scan.hasNextInt()) {
+                int opcion = scan.nextInt();
+                // Limpiar el buffer del scanner
+                scan.nextLine();
+                validarContinuar();
+                acciones(opcion);
+            } else {
+                // Si no hay un entero disponible, mostrar un mensaje de error
+                System.out.println("Error: No se proporcionó una entrada válida.");
+                continuar = false; // Cambiar la variable booleana para salir del bucle
+            }
+        }
     }
+    
 
     public static void acciones(int opcion) {
 
@@ -99,7 +119,8 @@ public class MenuSpotify {
             case 5:
 
                 ReproducirMusica();
-                scan.nextLine();
+
+
     
                 break;
 
@@ -268,45 +289,44 @@ public class MenuSpotify {
     }
 
     public static void ReproducirMusica() {
-
         Scanner reproducir = new Scanner(System.in);
-
-        System.out.println("1. Ingrese el titulo de la cancion");
-        System.out.println("2. buscar en la playlist");
-
-        String opcion = reproducir.nextLine();
-
-        switch (opcion) {
-
-            case "1":
-            String titulo = reproducir.nextLine();
-            titulo = titulo + ".mp3";
-            
-            Reproductor.reproducirCancion(titulo);
-            Reproductor.bucleMenu();
-                break;
-
-            case "2":
-            MostrarListas();
-            
-
-
-
-            break;
-        
-            default:
-                break;
+    
+        boolean salir = false; // Variable para controlar la salida del bucle
+    
+        while (!salir) { // Bucle para permitir interacción continua con el menú
+            System.out.println("1. Ingrese el título de la canción");
+            System.out.println("2. Buscar en la playlist");
+            System.out.print("Ingrese su opción: ");
+    
+            String opcion = reproducir.nextLine();
+    
+            switch (opcion) {
+                case "1":
+                    System.out.print("Ingrese el título de la canción: ");
+                    String titulo = reproducir.nextLine();
+                    titulo = titulo + ".mp3";
+                    Reproductor.reproducirCancion(titulo);
+                    Reproductor.bucleMenu(); // Aquí se llama al menú del reproductor
+                    break;
+    
+                case "2":
+                    MostrarListas();
+                    break;
+                
+                case "0":
+                    salir = true; // Si se selecciona la opción 0, salir del bucle
+                    break;
+    
+                default:
+                    System.out.println("Opción no válida");
+                    break;
+            }
         }
-
-       
-        
-        
-
+    
         reproducir.close();
-
-
     }
-
+    
+    
     public static void MostrarListas() {
 
         System.out.println("                    PlayList Creadas");

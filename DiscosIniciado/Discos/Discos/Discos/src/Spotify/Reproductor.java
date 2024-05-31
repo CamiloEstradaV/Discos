@@ -49,10 +49,10 @@ public class Reproductor {
         System.out.print("Ingrese su opción: ");
     }
 
-    public static void bucleMenu () {
-
-        while (true) { // Bucle infinito para mostrar el menú y esperar la entrada del usuario
-
+    public static void bucleMenu() {
+        boolean continuar = true; // Variable booleana para controlar el bucle
+    
+        while (continuar) { // Utilizar la variable booleana para controlar el bucle
             mostrarMenu();
             
             int opcion = Integer.parseInt(scanner.nextLine()); // Leer la opción del usuario
@@ -65,49 +65,39 @@ public class Reproductor {
                         pausarReproduccion(); // Pausar la reproducción si no está pausada
                     }
                     break;
-
-                    case 2:
-
+    
+                case 2:
                     detenerReproduccion();
-
-                break;
-
+                    break;
+    
                 case 3:
                     siguienteCancion(); // Reproducir la siguiente canción
-
                     break;
-
-                
-
+    
                 case 4:
-
                     cancionAnterior(); // Reproducir la canción anterior
-
-                break;
-
-                case 5:
-
-                    cambiarVolumen(volumen + 0.1f);
-                    
-                break;
-
-                case 6:
-
-                    cambiarVolumen(volumen - 0.1f);
-
                     break;
-
+    
+                case 5:
+                    cambiarVolumen(volumen + 0.1f);
+                    break;
+    
+                case 6:
+                    cambiarVolumen(volumen - 0.1f);
+                    break;
+    
                 case 0:
-
                     detenerReproduccion(); // Detener la reproducción y salir del programa
-                    System.out.println("Saliendo del programa...");
-                    return;
-
+                    System.out.println("Volviendo al menú principal...");
+                    continuar = false; // Cambiar la variable booleana para salir del bucle
+                    break;
+    
                 default:
                     System.out.println("Opción no válida"); // Mensaje de error para opción no válida
             }
         }
     }
+    
 
     public static void cargarCanciones() {
         File musicFolder = new File(MUSIC_FOLDER_PATH); 
