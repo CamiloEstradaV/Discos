@@ -18,10 +18,12 @@ public class Reproductor {
     private static Scanner scanner = new Scanner(System.in); 
     private static MP3Player mp3Player; // Reproductor MP3
     private static boolean pausa = false; 
+    private static boolean reproducir = false;
     private static List<String> playlist = new ArrayList<>(); 
     private static int indice = 0; 
     private static List <String> recomendados = new ArrayList<>();
     private static float volumen = 0.5f;
+    private static String titulo;
     
     
         /*cargarCanciones(); 
@@ -40,7 +42,12 @@ public class Reproductor {
         } else {
             System.out.println("1. Pausar"); 
         }
-        System.out.println("2. Detener Cancíon"); 
+        if (reproducir) {
+            System.out.println("2. Reproducir Cancíon");
+        } else {
+            System.out.println("2. Detener Cancíon"); 
+        }
+        
         System.out.println("3. Siguiente canción");
         System.out.println("4. Canción anterior"); 
         System.out.println("5. Subir volumen"); 
@@ -67,7 +74,11 @@ public class Reproductor {
                     break;
     
                 case 2:
-                    detenerReproduccion();
+                if (reproducir) {
+                    reproducirCancion(titulo);
+                } else {
+                    detenerReproduccion(); // Pausar la reproducción si no está pausada
+                }
                     break;
     
                 case 3:
@@ -90,6 +101,7 @@ public class Reproductor {
                     detenerReproduccion(); // Detener la reproducción y salir del programa
                     System.out.println("Volviendo al menú principal...");
                     continuar = false; // Cambiar la variable booleana para salir del bucle
+                    titulo = null;
                     break;
     
                 default:
@@ -127,6 +139,8 @@ public class Reproductor {
             mp3Player.play(); // Reproducir la canción
             System.out.println("Reproduciendo la canción: " + nombreCancion);
             pausa = false;
+            reproducir = false;
+            titulo = nombreCancion;
         } else {
             System.out.println("La canción no existe."); // Mensaje de error si la canción no se encuentra
         }
@@ -135,6 +149,7 @@ public class Reproductor {
     public static void detenerReproduccion() {
         if (mp3Player != null) {
             mp3Player.stop(); 
+            reproducir = true;
         }
     }
 
