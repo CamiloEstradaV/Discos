@@ -237,25 +237,26 @@ public class Reproductor {
     }
 
 
-    public static void EscucharCancion (String titulo) {
-
+    public static void EscucharCancion(String titulo) {
         cargarCanciones();
-
-        int recorrido = 0;
+        
+        boolean cancionEncontrada = false;
         int tamaño = playlist.size();
         
-        do {
-            if (playlist.get(recorrido).equals(titulo)) {
-
-                reproducirCancion(titulo);
-                
-            } 
-            recorrido++;
-            
-        } while (recorrido < tamaño);
-
-    }   
-
+        for (int i = 0; i < tamaño; i++) {
+            if (playlist.get(i).equalsIgnoreCase(titulo)) {
+                reproducirCancion(playlist.get(i));  // Reproducir la canción encontrada
+                bucleMenu();
+                cancionEncontrada = true;
+                break;  // Romper el bucle una vez que la canción se ha encontrado y reproducido
+            }
+        }
+        
+        if (!cancionEncontrada) {
+            System.out.println("La canción " + titulo + " no se encuentra en la carpeta o no es un archivo .mp3.");
+        }
+    }
+    
 
 }
 

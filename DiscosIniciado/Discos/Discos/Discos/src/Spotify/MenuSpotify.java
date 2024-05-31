@@ -56,6 +56,7 @@ public class MenuSpotify {
             System.out.println("5 = Reproducir canciones/listas");
             System.out.println("6 = Mostrar listas creadas");
             System.out.println("7 = Mostrar Todas las canciones(solo el nombre)");
+            System.out.println("8 = Guardar cancion el lista");
             System.out.println("____________________________________________________________________");
             System.out.println("");
             System.out.print("Digite el procedimiento que desee realizar: ");
@@ -138,6 +139,10 @@ public class MenuSpotify {
                 }
                 scan.nextLine();
 
+                break;
+
+                case 8:
+                agregarCancionesAPlaylistExistente();
                 break;
 
             default:
@@ -308,12 +313,11 @@ public class MenuSpotify {
                     System.out.print("Ingrese el título de la canción: ");
                     String titulo = reproducir.nextLine();
                     titulo = titulo + ".mp3";
-                    Reproductor.reproducirCancion(titulo);
-                    Reproductor.bucleMenu(); // Aquí se llama al menú del reproductor
+                    Reproductor.EscucharCancion(titulo);             
                     break;
     
                 case "2":
-                    MostrarListas();
+                    buscarEnPlaylist();
                     break;
                 
                 case "0":
@@ -329,7 +333,77 @@ public class MenuSpotify {
         
         MenuSpotify.Menu();
     }
+
+
+    public static void buscarEnPlaylist() {
+        MostrarListas();
+        
+        System.out.print("Digite el número de la playlist en la cual desea buscar: ");
+        int indicePlaylist = scan.nextInt() - 1;
+        scan.nextLine(); // Limpiar el buffer
+        
+        if (indicePlaylist >= 0 && indicePlaylist < ListasCreadas.size()) {
+            Listas selectedPlaylist = ListasCreadas.get(indicePlaylist);
+            System.out.println("PlayList seleccionada: " + selectedPlaylist.getNombreLista());
+            
+            for (int i = 0; i < selectedPlaylist.getListaGuardado().size(); i++) {
+                System.out.println((i + 1) + ". " + selectedPlaylist.getListaGuardado().get(i).getTitulo());
+            }
     
+            System.out.print("Digite el número de la canción que desea reproducir: ");
+            int indiceCancion = scan.nextInt() - 1;
+            scan.nextLine(); // Limpiar el buffer
+            
+            if (indiceCancion >= 0 && indiceCancion < selectedPlaylist.getListaGuardado().size()) {
+                Cancion song = selectedPlaylist.getListaGuardado().get(indiceCancion);
+                String titulo = song.getTitulo() + ".mp3";
+                Reproductor.EscucharCancion(titulo);
+            } else {
+                System.out.println("Número de canción no válido.");
+            }
+        } else {
+            System.out.println("Número de playlist no válido.");
+        }
+    }
+    
+
+    public static void agregarCancionesAPlaylistExistente() {
+        MostrarListas();
+        System.out.print("Digite el número de la lista de reproducción a la que desea agregar canciones: ");
+        int indiceLista = scan.nextInt() - 1;
+        scan.nextLine(); // Limpiar el buffer
+
+        if (indiceLista < 0 || indiceLista >= ListasCreadas.size()) {
+            System.out.println("Número de lista de reproducción no válido.");
+            return;
+        }
+
+        Listas listaSeleccionada = ListasCreadas.get(indiceLista);
+        mostrarCanciones();
+
+        System.out.print("Digite el número de la canción que desea agregar a la lista de reproducción: ");
+        int indiceCancion = scan.nextInt() - 1;
+        scan.nextLine(); // Limpiar el buffer
+
+        if (indiceCancion < 0 || indiceCancion >= CancionesCreadas.size()) {
+            System.out.println("Número de canción no válido.");
+            return;
+        }
+
+        Cancion cancionSeleccionada = CancionesCreadas.get(indiceCancion);
+        listaSeleccionada.agregarCancion(cancionSeleccionada);
+        System.out.println("La canción se ha agregado exitosamente a la lista de reproducción.");
+    }
+
+    public static void mostrarCanciones() {
+        System.out.println("Canciones disponibles:");
+        for (int i = 0; i < CancionesCreadas.size(); i++) {
+            System.out.println((i + 1) + ". " + CancionesCreadas.get(i).getTitulo());
+        }
+    }
+
+
+
     
     public static void MostrarListas() {
 

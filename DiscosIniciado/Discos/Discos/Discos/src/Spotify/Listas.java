@@ -29,4 +29,8 @@ public class Listas {
         this.listaGuardado = listaGuardado;
     }
 
+    public void agregarCancion(Cancion cancion) {
+        listaGuardado.add(cancion);
+    }
+
 }
