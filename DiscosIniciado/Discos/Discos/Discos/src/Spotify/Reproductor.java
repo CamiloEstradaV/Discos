@@ -1,31 +1,5 @@
 package src.Spotify;
 
-/*import java.util.ArrayList;
-
-public class Reproductor {
-
-    ArrayList<Cancion> reproductor;
-     static Boolean reproduciendo;
-
-    
-    public Reproductor(){
-        this.reproduciendo = false;
-
-    }
-
-    public static void Reproducir(){
-        
-        reproduciendo=true;
-
-    }
-
-    public static Boolean Reproduciendo(){
-
-        return reproduciendo;
-    }
-
-}
-*/
 import jaco.mp3.player.MP3Player;
 
 import java.io.File;
@@ -41,25 +15,45 @@ public class Reproductor {
     private static final String MUSIC_FOLDER_PATH = "music"; // Ruta de la carpeta donde están almacenadas las canciones
     private static Scanner scanner = new Scanner(System.in); 
     private static MP3Player mp3Player; // Reproductor MP3
-    private static boolean isPaused = false; 
+    private static boolean pausa = false; 
     private static List<String> playlist = new ArrayList<>(); 
     private static int indice = 0; 
     private static List <String> recomendados = new ArrayList<>();
     
     
-    public static void main(String[] args) {
-        cargarCanciones(); 
+        /*cargarCanciones(); 
         recomendaciones();
-       // reproducirCancion(playlist.get(indice)); // Reproducir la primera canción de la lista
+
+       
         reproducirCancion(recomendados.get(indice));
         
+       */
+    
+
+    public static void mostrarMenu() {
+        System.out.println("----- Menu -----");
+        if (pausa) {
+            System.out.println("1. Reanudar"); 
+        } else {
+            System.out.println("1. Pausar"); 
+        }
+        System.out.println("2. Siguiente canción"); 
+        System.out.println("3. Canción anterior"); 
+        System.out.println("0. Salir"); 
+        System.out.print("Ingrese su opción: ");
+    }
+
+    public static void bucleMenu () {
+
         while (true) { // Bucle infinito para mostrar el menú y esperar la entrada del usuario
+
             mostrarMenu();
+            
             int opcion = Integer.parseInt(scanner.nextLine()); // Leer la opción del usuario
             
             switch (opcion) {
                 case 1:
-                    if (isPaused) {
+                    if (pausa) {
                         reanudarCancion(); // Reanudar la canción si está pausada
                     } else {
                         pausarReproduccion(); // Pausar la reproducción si no está pausada
@@ -81,20 +75,7 @@ public class Reproductor {
         }
     }
 
-    public static void mostrarMenu() {
-        System.out.println("----- Menu -----");
-        if (isPaused) {
-            System.out.println("1. Reanudar"); 
-        } else {
-            System.out.println("1. Pausar"); 
-        }
-        System.out.println("2. Siguiente canción"); 
-        System.out.println("3. Canción anterior"); 
-        System.out.println("0. Salir"); 
-        System.out.print("Ingrese su opción: ");
-    }
-
-    private static void cargarCanciones() {
+    public static void cargarCanciones() {
         File musicFolder = new File(MUSIC_FOLDER_PATH); 
         if (musicFolder.exists() && musicFolder.isDirectory()) { // Verificar si la carpeta existe y es un directorio
             File[] canciones = musicFolder.listFiles((dir, name) -> name.toLowerCase().endsWith(".mp3")); // Obtener todos los archivos MP3
@@ -110,7 +91,7 @@ public class Reproductor {
         }
     }
 
-    private static void reproducirCancion(String nombreCancion) {
+    public static void reproducirCancion(String nombreCancion) {
         String rutaCancion = MUSIC_FOLDER_PATH + File.separator + nombreCancion; // Construir la ruta completa de la canción
         File cancion = new File(rutaCancion); 
 
@@ -121,35 +102,35 @@ public class Reproductor {
             mp3Player = new MP3Player(cancion); 
             mp3Player.play(); // Reproducir la canción
             System.out.println("Reproduciendo la canción: " + nombreCancion);
-            isPaused = false;
+            pausa = false;
         } else {
             System.out.println("La canción no existe."); // Mensaje de error si la canción no se encuentra
         }
     }
 
-    private static void detenerReproduccion() {
+    public static void detenerReproduccion() {
         if (mp3Player != null) {
             mp3Player.stop(); 
         }
     }
 
-    private static void pausarReproduccion() {
-        if (mp3Player != null && !isPaused) {
+    public static void pausarReproduccion() {
+        if (mp3Player != null && !pausa) {
             mp3Player.pause(); 
-            isPaused = true; 
+            pausa = true; 
             System.out.println("Reproducción pausada.");
         }
     }
 
-    private static void reanudarCancion() {
-        if (mp3Player != null && isPaused) {
+    public static void reanudarCancion() {
+        if (mp3Player != null && pausa) {
             mp3Player.play(); 
-            isPaused = false; 
+            pausa = false; 
             System.out.println("Reproducción reanudada.");
         }
     }
 
-    private static void siguienteCancion() {
+    public static void siguienteCancion() {
         if (indice < playlist.size() - 1) {
             indice++; 
             reproducirCancion(playlist.get(indice)); 
@@ -158,7 +139,7 @@ public class Reproductor {
         }
     }
 
-    private static void cancionAnterior() {
+    public static void cancionAnterior() {
         if (indice > 0) {
             indice--; // Decrementar el índice para la canción anterior
             reproducirCancion(playlist.get(indice)); 
@@ -167,27 +148,7 @@ public class Reproductor {
         }
     }
     
-   /* private static void recomendaciones (){
-        
-        int contador = 0;
-        int canciones = 1;
-        
-        
-        do {  
-
-            int cancionRandom = (int) (Math.random()*canciones);
-            recomendados.add(playlist.get(cancionRandom));
-            contador++;
-
-        } while (contador!= 12);
-    
-        
-        
-
-
-        
-    }*/
-    private static void recomendaciones() {
+    public static void recomendaciones() {
         Set<String> cancionesUnicas = new HashSet<>();
 
         while (cancionesUnicas.size() < 12 && cancionesUnicas.size() < playlist.size()) {
@@ -197,4 +158,52 @@ public class Reproductor {
 
         recomendados.addAll(cancionesUnicas);
     }
+
+
+    public static void EscucharCancion (String titulo) {
+
+        cargarCanciones();
+        boolean cancionEncotrada = false;
+        int recorrido = 0;
+        int tamaño = playlist.size();
+        
+        do {
+            if (playlist.get(recorrido).equals(titulo)) {
+
+                reproducirCancion(titulo);
+                
+            } 
+            recorrido++;
+            
+        } while (recorrido < tamaño);
+
+    }   
+
+
 }
+
+/*import java.util.ArrayList;
+
+
+
+    ArrayList<Cancion> reproductor;
+     static Boolean reproduciendo;
+
+    
+    public Reproductor(){
+        this.reproduciendo = false;
+
+    }
+
+    public static void Reproducir(){
+        
+        reproduciendo=true;
+
+    }
+
+    public static Boolean Reproduciendo(){
+
+        return reproduciendo;
+    }
+
+*/

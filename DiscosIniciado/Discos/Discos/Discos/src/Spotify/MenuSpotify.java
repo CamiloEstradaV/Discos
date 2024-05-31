@@ -13,9 +13,6 @@ public class MenuSpotify {
     static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
     static int canciones;
 
-    // int cancionRandom = (int) (Math.random()*canciones); eso es para que el
-    // reproductor ponga las canciones de manera aleatoria
-
     public static void main(String[] args) throws Exception {
 
         do {
@@ -101,7 +98,7 @@ public class MenuSpotify {
 
                 ReproducirMusica();
                 scan.nextLine();
-                validarContinuar();
+    
                 break;
 
             case 6:
@@ -269,6 +266,42 @@ public class MenuSpotify {
     }
 
     public static void ReproducirMusica() {
+
+        Scanner reproducir = new Scanner(System.in);
+
+        System.out.println("1. Ingrese el titulo de la cancion");
+        System.out.println("2. buscar en la playlist");
+
+        String opcion = reproducir.nextLine();
+
+        switch (opcion) {
+
+            case "1":
+            String titulo = reproducir.nextLine();
+            titulo = titulo + ".mp3";
+            
+            Reproductor.reproducirCancion(titulo);
+            Reproductor.bucleMenu();
+                break;
+
+            case "2":
+            MostrarListas();
+            
+
+
+
+            break;
+        
+            default:
+                break;
+        }
+
+       
+        
+        
+
+
+
 
     }
 
