@@ -205,11 +205,13 @@ public class Reproductor {
 
         else if ( nuevoVolumen > 1.0f) {
 
-            System.out.println("El volumen dse encuentra al maximo posible");
+            System.out.println("El volumen se encuentra al maximo posible");
 
         }
-        volumen = nuevoVolumen;
-        if (mp3Player != null) {
+        
+        else if (mp3Player != null) {
+
+            volumen = nuevoVolumen;
             Line.Info sourceLineInfo = Port.Info.SPEAKER;
             if (AudioSystem.isLineSupported(sourceLineInfo)) {
                 try {
@@ -265,29 +267,3 @@ public class Reproductor {
     
 
 }
-
-/*import java.util.ArrayList;
-
-
-
-    ArrayList<Cancion> reproductor;
-     static Boolean reproduciendo;
-
-    
-    public Reproductor(){
-        this.reproduciendo = false;
-
-    }
-
-    public static void Reproducir(){
-        
-        reproduciendo=true;
-
-    }
-
-    public static Boolean Reproduciendo(){
-
-        return reproduciendo;
-    }
-
-*/

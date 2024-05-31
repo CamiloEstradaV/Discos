@@ -12,10 +12,18 @@ public class MenuSpotify {
     static ArrayList<Cancion> colaReproduccion = new ArrayList<>();
     static ArrayList<Cancion> CancionesCreadas = new ArrayList<>();
     static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
+    
     static int canciones;
      static boolean continuar = true;
 
     public static void main(String[] args) throws Exception {
+
+        String nombreString = "Biblioteca";
+        Listas biblioteca = new Listas(nombreString, CancionesCreadas);
+
+  
+
+        ListasCreadas.add(biblioteca);
 
         System.out.println("");
         System.out.println("____________________________________________________________________");
@@ -147,7 +155,7 @@ public class MenuSpotify {
 
             default:
 
-                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 7");
+                System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 8");
 
                 break;
         }
@@ -157,7 +165,6 @@ public class MenuSpotify {
     public static void Cancion() {
 
         System.out.print("Escriba el titulo de la cancion: ");
-        scan.nextLine();
         String titulo = scan.nextLine();
         titulo= titulo+ ".mp3";
 
