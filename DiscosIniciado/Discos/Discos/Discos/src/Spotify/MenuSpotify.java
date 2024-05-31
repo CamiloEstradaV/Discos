@@ -159,6 +159,7 @@ public class MenuSpotify {
         System.out.print("Escriba el titulo de la cancion: ");
         scan.nextLine();
         String titulo = scan.nextLine();
+        titulo= titulo+ ".mp3";
 
         System.out.print("Escriba el artista que interpreta esta cancion: ");
         String artista = scan.nextLine();
@@ -346,25 +347,23 @@ public class MenuSpotify {
             Listas selectedPlaylist = ListasCreadas.get(indicePlaylist);
             System.out.println("PlayList seleccionada: " + selectedPlaylist.getNombreLista());
             
-            for (int i = 0; i < selectedPlaylist.getListaGuardado().size(); i++) {
-                System.out.println((i + 1) + ". " + selectedPlaylist.getListaGuardado().get(i).getTitulo());
+            ArrayList<String> nombresCanciones = new ArrayList<>();
+            for (Cancion cancion : selectedPlaylist.getListaGuardado()) {
+                nombresCanciones.add(cancion.getTitulo());
             }
-    
-            System.out.print("Digite el número de la canción que desea reproducir: ");
-            int indiceCancion = scan.nextInt() - 1;
-            scan.nextLine(); // Limpiar el buffer
             
-            if (indiceCancion >= 0 && indiceCancion < selectedPlaylist.getListaGuardado().size()) {
-                Cancion song = selectedPlaylist.getListaGuardado().get(indiceCancion);
-                String titulo = song.getTitulo() + ".mp3";
-                Reproductor.EscucharCancion(titulo);
-            } else {
-                System.out.println("Número de canción no válido.");
+            // Reproducir la lista de reproducción completa
+            for (int i = 0; i < nombresCanciones.size(); i++) {
+                Reproductor.reproducirPlaylist(nombresCanciones);
             }
+            
         } else {
             System.out.println("Número de playlist no válido.");
         }
     }
+    
+    
+    
     
 
     public static void agregarCancionesAPlaylistExistente() {

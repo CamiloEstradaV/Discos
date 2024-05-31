@@ -146,6 +146,12 @@ public class Reproductor {
         }
     }
 
+    public static void reproducirPlaylist(ArrayList<String> playlist) {
+        for (String nombreCancion : playlist) {
+            reproducirCancion(nombreCancion);
+        }
+    }
+
     public static void detenerReproduccion() {
         if (mp3Player != null) {
             mp3Player.stop(); 
