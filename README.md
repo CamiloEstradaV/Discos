@@ -79,5 +79,9 @@ ________________________________________________________________________________
 
 Donde se evaluará el número que se haya escrito y realizara la opción perteneciente a dicho numero y en caso de que el numero no pertenezca a aquellas opciones posibles devolverá un mensaje de error el cual no permitirá que el programa continue y que este vuelva al inicio. 
 
-### Derechos de Autor 
-© [2024] [Camilo Estrada], [Santiago Sanchez], [Esteban Romano]. Este proyecto es parte de un proyecto final de universidad. A menos que se indique lo contrario, está destinado exclusivamente para fines educativos y académicos. No se permite su uso comercial sin el permiso explicito de los autores. 
+
+Si el programa no funciona, verifique que tenga las  bnibliotecas de JaCo MP3 y Java Sound Sampled
+
+
+### Derechos de Autor  
+© [2024] [Camilo Estrada], [Santiago Sanchez], [Esteban Avila]. Este proyecto es parte de un proyecto finalde la asignautra de tecnicas de programacion I de la Fundacion Universitaria Konrad Lorenz. A menos que se indique lo contrario, está destinado exclusivamente para fines educativos y académicos. No se permite su uso comercial sin el permiso explicito de los autores. 

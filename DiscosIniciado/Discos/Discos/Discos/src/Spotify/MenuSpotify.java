@@ -1,6 +1,9 @@
+//Yefry Esteban Avila Zuluaga - 506232728
+//Camilo Andres Estrada Vanegas - 506232719
+//Santiago Steven Sanchez Barbosa - 614 272708
+
+
 package src.Spotify;
-
-
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -225,6 +228,7 @@ public class MenuSpotify {
 
         allCanciones();
         System.out.println("Ingrese el numero de la cancion que quiere agregar a la Biblioteca del reproductor");
+        @SuppressWarnings("unused")
         int aggBiblioteca = scan.nextInt() - 1;
         scan.nextLine(); 
         Biblioteca.add(cancion);
@@ -304,41 +308,41 @@ public class MenuSpotify {
     }
 
     public static void ReproducirMusica() {
-        Scanner reproducir = new Scanner(System.in);
-    
-        boolean salir = false; // Variable para controlar la salida del bucle
-    
-        while (!salir) { // Bucle para permitir interacción continua con el menú
-            System.out.println("1. Ingrese el título de la canción");
-            System.out.println("2. Buscar en la playlist");
-            System.out.println("0. salir");
-            System.out.print("Ingrese su opción: ");
-    
-            String opcion = reproducir.nextLine();
-    
-            switch (opcion) {
-                case "1":
-                    System.out.print("Ingrese el título de la canción: ");
-                    String titulo = reproducir.nextLine();
-                    titulo = titulo + ".mp3";
-                    Reproductor.EscucharCancion(titulo);             
-                    break;
-    
-                case "2":
-                    buscarEnPlaylist();
-                    break;
-                
-                case "0":
-                    salir = true; // Si se selecciona la opción 0, salir del bucle
-                    scan.reset();
-                    break;
-    
-                default:
-                    System.out.println("Opción no válida");
-                    break;
+        try (Scanner reproducir = new Scanner(System.in)) {
+            boolean salir = false; // Variable para controlar la salida del bucle
+   
+            while (!salir) { // Bucle para permitir interacción continua con el menú
+                System.out.println("1. Ingrese el título de la canción");
+                System.out.println("2. Buscar en la playlist");
+                System.out.println("0. salir");
+                System.out.print("Ingrese su opción: ");
+   
+                String opcion = reproducir.nextLine();
+   
+                switch (opcion) {
+                    case "1":
+                        System.out.print("Ingrese el título de la canción: ");
+                        String titulo = reproducir.nextLine();
+                        titulo = titulo + ".mp3";
+                        Reproductor.EscucharCancion(titulo);             
+                        break;
+   
+                    case "2":
+                        buscarEnPlaylist();
+                        break;
+                    
+                    case "0":
+                        salir = true; // Si se selecciona la opción 0, salir del bucle
+                        scan.reset();
+                        break;
+   
+                    default:
+                        System.out.println("Opción no válida");
+                        break;
+                }
             }
         }
-        
+    
         MenuSpotify.Menu();
     }
 
