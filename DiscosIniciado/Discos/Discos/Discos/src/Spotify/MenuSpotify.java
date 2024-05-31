@@ -1,8 +1,9 @@
 package src.Spotify;
 
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
-
 
 public class MenuSpotify {
 
@@ -12,7 +13,7 @@ public class MenuSpotify {
     static ArrayList<Cancion> CancionesCreadas = new ArrayList<>();
     static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
     static int canciones;
-    static int repetir;
+     static boolean continuar = true;
 
     public static void main(String[] args) throws Exception {
 
@@ -28,13 +29,8 @@ public class MenuSpotify {
         System.out.println("");
 
 
-        repetir = -1;
-
-        for (int i = 0; i >= repetir; i++) {
-
+        while (continuar) { // Bucle para permitir interacción continua con el menú
             Menu();
-
-            repetir++;
         }
 
         
@@ -63,15 +59,18 @@ public class MenuSpotify {
             System.out.println("____________________________________________________________________");
             System.out.println("");
             System.out.print("Digite el procedimiento que desee realizar: ");
-    
+            
+            
             if (scan.hasNextInt()) {
                 int opcion = scan.nextInt();
                 // Limpiar el buffer del scanner
                 scan.nextLine();
-                validarContinuar();
+                
                 acciones(opcion);
             } else {
                 // Si no hay un entero disponible, mostrar un mensaje de error
+                ;
+                scan.nextLine();
                 System.out.println("Error: No se proporcionó una entrada válida.");
                 continuar = false; // Cambiar la variable booleana para salir del bucle
             }
@@ -92,28 +91,28 @@ public class MenuSpotify {
             case 1:
 
                 Cancion();
-                validarContinuar();
+
                 break;
 
             case 2:
 
                 elmCancion();
                 scan.nextLine();
-                validarContinuar();
+
                 break;
 
             case 3:
 
                 agregarBibiloteca();
                 scan.nextLine();
-                validarContinuar();
+
                 break;
 
             case 4:
 
                 CrearPlaylist();
                 scan.nextLine();
-                validarContinuar();
+
                 break;
 
             case 5:
@@ -128,7 +127,7 @@ public class MenuSpotify {
 
                 MostrarListas();
                 scan.nextLine();
-                validarContinuar();
+
                 break;
 
             case 7:
@@ -138,7 +137,7 @@ public class MenuSpotify {
                     allCanciones();
                 }
                 scan.nextLine();
-                validarContinuar();
+
                 break;
 
             default:
@@ -197,6 +196,7 @@ public class MenuSpotify {
         allCanciones();
         System.out.println("Ingrese el numero de la cancion que desea borrar");
         int posicionEliminar = scan.nextInt() - 1;
+        scan.nextLine();
         System.out.println("La cancion " + CancionesCreadas.get(posicionEliminar).getTitulo() + " Ha sido eliminada");
         CancionesCreadas.remove(posicionEliminar);
     }
@@ -213,6 +213,7 @@ public class MenuSpotify {
         allCanciones();
         System.out.println("Ingrese el numero de la cancion que quiere agregar a la Biblioteca del reproductor");
         int aggBiblioteca = scan.nextInt() - 1;
+        scan.nextLine(); 
         Biblioteca.add(cancion);
     }
 
@@ -245,6 +246,7 @@ public class MenuSpotify {
 
                         System.out.println("Digite el numero perteneciente a la cancion que desee agregar: ");
                         int cancionAgregada = scan.nextInt() - 1;
+                         scan.nextLine(); 
 
                         if (cancionAgregada < 0) {
 
@@ -296,6 +298,7 @@ public class MenuSpotify {
         while (!salir) { // Bucle para permitir interacción continua con el menú
             System.out.println("1. Ingrese el título de la canción");
             System.out.println("2. Buscar en la playlist");
+            System.out.println("0. salir");
             System.out.print("Ingrese su opción: ");
     
             String opcion = reproducir.nextLine();
@@ -315,6 +318,7 @@ public class MenuSpotify {
                 
                 case "0":
                     salir = true; // Si se selecciona la opción 0, salir del bucle
+                    scan.reset();
                     break;
     
                 default:
@@ -322,8 +326,8 @@ public class MenuSpotify {
                     break;
             }
         }
-    
-        reproducir.close();
+        
+        MenuSpotify.Menu();
     }
     
     
@@ -374,11 +378,8 @@ public class MenuSpotify {
 
     }
 
-    public static void validarContinuar() {
-        System.out.println("\nPara continuar oprima ENTER");
-        scan.nextLine();
-
-    }
 
 }
+
+
 
