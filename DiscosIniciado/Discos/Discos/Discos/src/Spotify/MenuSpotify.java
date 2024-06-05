@@ -1,6 +1,6 @@
-//Yefry Esteban Avila Zuluaga - 506232728
-//Camilo Andres Estrada Vanegas - 506232719
-//Santiago Steven Sanchez Barbosa - 614 272708
+//Yefry Esteban Avila Zuluaga - 506 232728
+//Camilo Andres Estrada Vanegas - 506 232719
+//Santiago Steven Sanchez Barbosa - 614 232708
 
 
 package src.Spotify;
@@ -29,48 +29,168 @@ public class MenuSpotify {
         ListasCreadas.add(biblioteca);
 
         System.out.println("");
-        System.out.println("____________________________________________________________________");
         System.out.println("");
-        System.out.println("       Bienvenido a Clovertify: Su reproductor musical de confianza");
-
         System.out.println("");
-        System.out.println("Estimado usuario por favor seleccione el procedimiento que desea realizar");
+        System.out.println("===========================================================================================================");
+        System.out.println("");
         System.out.println("");
 
+        System.out.println("        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\r\n" + //
+                           "        ░░░██████╗░██╗███████╗███╗░░██╗██╗░░░██╗███████╗███╗░░██╗██╗██████╗░░█████╗░░░░░█████╗░░░░\r\n" + //
+                           "        ░░░██╔══██╗██║██╔════╝████╗░██║██║░░░██║██╔════╝████╗░██║██║██╔══██╗██╔══██╗░░░██╔══██╗░░░\r\n" + //
+                           "        ░░░██████╦╝██║█████╗░░██╔██╗██║╚██╗░██╔╝█████╗░░██╔██╗██║██║██║░░██║██║░░██║░░░███████║░░░\r\n" + //
+                           "        ░░░██╔══██╗██║██╔══╝░░██║╚████║░╚████╔╝░██╔══╝░░██║╚████║██║██║░░██║██║░░██║░░░██╔══██║░░░\r\n" + //
+                           "        ░░░██████╦╝██║███████╗██║░╚███║░░╚██╔╝░░███████╗██║░╚███║██║██████╔╝╚█████╔╝░░░██║░░██║░░░\r\n" + //
+                           "        ░░░╚═════╝░╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═╝░░╚══╝╚═╝╚═════╝░░╚════╝░░░░╚═╝░░╚═╝░░░\r\n" + //
+                           "        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\r\n" + //
+                           "        ░░░░░░░░█████╗░██╗░░░░░░█████╗░██╗░░░██╗███████╗██████╗░████████╗██╗███████╗██╗░░░██╗░░░░░\r\n" + //
+                           "        ░░░░░░░██╔══██╗██║░░░░░██╔══██╗██║░░░██║██╔════╝██╔══██╗╚══██╔══╝██║██╔════╝╚██╗░██╔╝░░░░░\r\n" + //
+                           "        ░░░░░░░██║░░╚═╝██║░░░░░██║░░██║╚██╗░██╔╝█████╗░░██████╔╝░░░██║░░░██║█████╗░░░╚████╔╝░░░░░░\r\n" + //
+                           "        ░░░░░░░██║░░██╗██║░░░░░██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗░░░██║░░░██║██╔══╝░░░░╚██╔╝░░░░░░░\r\n" + //
+                           "        ░░░░░░░╚█████╔╝███████╗╚█████╔╝░░╚██╔╝░░███████╗██║░░██║░░░██║░░░██║██║░░░░░░░░██║░░░░░░░░\r\n" + //
+                           "        ░░░░░░░░╚════╝░╚══════╝░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝╚═╝░░░░░░░░╚═╝░░░░░░░░\r\n" + //
+                           "        ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("===========================================================================================================");
+        
+        System.out.println("");
+        System.out.println("");
+        System.out.println("\r\n" + //
+                        "                                █ █▀▄▀█ █▀█ █▀█ █▀█ ▀█▀ ▄▀█ █▄ █ ▀█▀ █▀▀\r\n" + //
+                        "                                █ █ ▀ █ █▀▀ █▄█ █▀▄  █  █▀█ █ ▀█  █  ██▄");
+
+        System.out.println("");
+        System.out.println("            ESTIMADO USUARIO, POR FAVOR SELECCIONE EL PROCEDIMIENTO QUE DESEA REALIZAR");
+        System.out.println("");
+        System.out.println("        (TENGA EN CUENTA QUE DEBE ESCRIBIR EL NUMERO CORRESPONDIENTE A DICHO PROCEDIMIENTO)");
+        System.out.println("");
         System.out.println("");
 
+        System.out.println("===========================================================================================================");
 
         while (continuar) { // Bucle para permitir interacción continua con el menú
+
             Menu();
+
         }
-
-        
-
-           
-
-     
-
     }
 
     public static void Menu() {
         boolean continuar = true; // Variable booleana para controlar si se debe continuar en el menú
     
         while (continuar) { // Utilizar la variable booleana para controlar el bucle
+
             System.out.println("");
-            System.out.println("____________________________________________________________________");
             System.out.println("");
-            System.out.println("0 = Salir");
-            System.out.println("1 = Crear una canción");
-            System.out.println("2 = Eliminar una canción");
-            System.out.println("3 = Agregar canciones a la biblioteca");
-            System.out.println("4 = Crear una lista de reproduccion de canciones");
-            System.out.println("5 = Reproducir canciones/listas");
-            System.out.println("6 = Mostrar listas creadas");
-            System.out.println("7 = Mostrar Todas las canciones(solo el nombre)");
-            System.out.println("8 = Guardar cancion el lista");
-            System.out.println("____________________________________________________________________");
+            System.out.println("===========================================================================================================");
             System.out.println("");
-            System.out.print("Digite el procedimiento que desee realizar: ");
+            System.out.println( "                               ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\r\n" + //
+                                "                               ░░░███╗░░░███╗███████╗███╗░░██╗██╗░░░██╗░░░\r\n" + //
+                                "                               ░░░████╗░████║██╔════╝████╗░██║██║░░░██║░░░\r\n" + //
+                                "                               ░░░██╔████╔██║█████╗░░██╔██╗██║██║░░░██║░░░\r\n" + //
+                                "                               ░░░██║╚██╔╝██║██╔══╝░░██║╚████║██║░░░██║░░░\r\n" + //
+                                "                               ░░░██║░╚═╝░██║███████╗██║░╚███║╚██████╔╝░░░\r\n" + //
+                                "                               ░░░╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚══╝░╚═════╝░░░░\r\n" + //
+                                "                               ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+            System.out.println("");
+            System.out.println("===========================================================================================================");
+            System.out.println("");
+
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "█ █  ▀▀   █▀ ▄▀█ █   █ █▀█\r\n" + //
+                                "█▄█  ▀▀   ▄█ █▀█ █▄▄ █ █▀▄");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄█\r\n" + //
+                                " █   ▀▀   █▀▀ █▀█ █▀▀ ▄▀█ █▀█   █ █ █▄ █ ▄▀█   █▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █\r\n" + //
+                                "▄█▄  ▀▀   █▄▄ █▀▄ ██▄ █▀█ █▀▄   █▄█ █ ▀█ █▀█   █▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "▄▄█  ▀▀   █▀▀ █   █ █▀▄▀█ █ █▄ █ ▄▀█ █▀█   █ █ █▄ █ ▄▀█   █▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █\r\n" + //
+                                "█▄▄  ▀▀   ██▄ █▄▄ █ █ ▀ █ █ █ ▀█ █▀█ █▀▄   █▄█ █ ▀█ █▀█   █▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "▄▄█  ▀▀   ▄▀█ █▀▀ █▀█ █▀▀ █▀▀ ▄▀█ █▀█   █▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █ █▀▀ █▀   ▄▀█   █   ▄▀█\r\n" + //
+                                "▄▄█  ▀▀   █▀█ █▄█ █▀▄ ██▄ █▄█ █▀█ █▀▄   █▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█ ██▄ ▄█   █▀█   █▄▄ █▀█\r\n" + //
+                                "\r\n" + //
+                                "█▄▄ █ █▄▄ █   █ █▀█ ▀█▀ █▀▀ █▀▀ ▄▀█\r\n" + //
+                                "█▄█ █ █▄█ █▄▄ █ █▄█  █  ██▄ █▄▄ █▀█");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄ ▄\r\n" + //
+                                "█▄█  ▀▀   █▀▀ █▀█ █▀▀ ▄▀█ █▀█   █ █ █▄ █ ▄▀█   █   █ █▀ ▀█▀ ▄▀█   █▀▄ █▀▀\r\n" + //
+                                "  █  ▀▀   █▄▄ █▀▄ ██▄ █▀█ █▀▄   █▄█ █ ▀█ █▀█   █▄▄ █ ▄█  █  █▀█   █▄▀ ██▄\r\n" + //
+                                "\r\n" + //
+                                "█▀█ █▀▀ █▀█ █▀█ █▀█ █▀▄ █ █ █▀▀ █▀▀ █ █▀█ █▄ █   █▀▄ █▀▀   █▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █ █▀▀ █▀\r\n" + //
+                                "█▀▄ ██▄ █▀▀ █▀▄ █▄█ █▄▀ █▄█ █▄▄ █▄▄ █ █▄█ █ ▀█   █▄▀ ██▄   █▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█ ██▄ ▄█");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "█▄▄   ▀▀   █▀█ █▀▀ █▀█ █▀█ █▀█ █▀▄ █ █ █▀▀ █ █▀█   █▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █ █▀▀ █▀  ▄▀ █   █ █▀ ▀█▀ ▄▀█ █▀\r\n" + //
+                                "▄▄█   ▀▀   █▀▄ ██▄ █▀▀ █▀▄ █▄█ █▄▀ █▄█ █▄▄ █ █▀▄   █▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█ ██▄ ▄█ ▄▀  █▄▄ █ ▄█  █  █▀█ ▄█");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "█▄▄   ▀▀   █▀▄▀█ █▀█ █▀ ▀█▀ █▀█ ▄▀█ █▀█   █   █ █▀ ▀█▀ ▄▀█ █▀   █▀▀ █▀█ █▀▀ ▄▀█ █▀▄ ▄▀█ █▀\r\n" + //
+                                "█▄█   ▀▀   █ ▀ █ █▄█ ▄█  █  █▀▄ █▀█ █▀▄   █▄▄ █ ▄█  █  █▀█ ▄█   █▄▄ █▀▄ ██▄ █▀█ █▄▀ █▀█ ▄█");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "  █   ▀▀   █▀▄▀█ █▀█ █▀ ▀█▀ █▀█ ▄▀█ █▀█   ▀█▀ █▀█ █▀▄ ▄▀█ █▀   █   ▄▀█ █▀\r\n" + //
+                                "  █   ▀▀   █ ▀ █ █▄█ ▄█  █  █▀▄ █▀█ █▀▄    █  █▄█ █▄▀ █▀█ ▄█   █▄▄ █▀█ ▄█\r\n" + //
+                                "\r\n" + //
+                                "█▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █ █▀▀ █▀   ▄▀ █▀ █▀█ █   █▀█   █▀▀ █     █▄ █ █▀█ █▀▄▀█ █▄▄ █▀█ █▀▀ ▀▄\r\n" + //
+                                "█▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█ ██▄ ▄█   ▀▄ ▄█ █▄█ █▄▄ █▄█   ██▄ █▄▄   █ ▀█ █▄█ █ ▀ █ █▄█ █▀▄ ██▄ ▄▀");
+            System.out.println("");
+
+            System.out.println("");
+            System.out.println("\r\n" + //
+                                "▄▄▄\r\n" + //
+                                "█▄█   ▀▀   █▀▀ █ █ ▄▀█ █▀█ █▀▄ ▄▀█ █▀█   █▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █   █▀▀ █     █   █ █▀ ▀█▀ ▄▀█\r\n" + //
+                                "█▄█   ▀▀   █▄█ █▄█ █▀█ █▀▄ █▄▀ █▀█ █▀▄   █▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█   ██▄ █▄▄   █▄▄ █ ▄█  █  █▀█");
+            System.out.println(""); 
+
+            System.out.println("\r\n" + //
+                                "█▀█\r\n" + //
+                                "▀▀█   ▀▀   \r\n" + //
+                                "  █   ▀▀   ");
+            System.out.println(""); 
+            
+            System.out.println("\r\n" + //
+                                "▄█  █▀█\r\n" + //
+                                " █  █ █   ▀▀   \r\n" + //
+                                "▄█▄ █▄█   ▀▀   ");
+            System.out.println(""); 
+
+            System.out.println("\r\n" + //
+                                "▄█  ▄█\r\n" + //
+                                " █   █    ▀▀   \r\n" + //
+                                "▄█▄ ▄█▄   ▀▀   ");
+            System.out.println(""); 
+            
+            System.out.println("");
+            System.out.println("===========================================================================================================");
+            System.out.println("");
+
+            System.out.print("DIGITE EL PROCEDIMIENTO QUE DESEE REALIZAR: ");
             
             
             if (scan.hasNextInt()) {
@@ -144,7 +264,9 @@ public class MenuSpotify {
 
             case 7:
                 if (CancionesCreadas.size() == 0) {
+                    System.out.println("");
                     System.out.println("No existen canciones en el reproductor");
+                    System.out.println("");
                 } else {
                     allCanciones();
                 }
@@ -157,9 +279,9 @@ public class MenuSpotify {
                 break;
 
             default:
-
+                System.out.println("");
                 System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 8");
-
+                System.out.println("");
                 break;
         }
 
@@ -167,28 +289,44 @@ public class MenuSpotify {
 
     public static void Cancion() {
 
+        System.out.println("");
         System.out.print("Escriba el titulo de la cancion: ");
         String titulo = scan.nextLine();
         titulo= titulo+ ".mp3";
+        System.out.println("");
 
+        System.out.println("");
         System.out.print("Escriba el artista que interpreta esta cancion: ");
         String artista = scan.nextLine();
+        System.out.println("");
 
+        System.out.println("");
         System.out.print("Escriba el genero de la cancion: ");
         String genero = scan.nextLine();
+        System.out.println("");
 
+        System.out.println("");
         System.out.print("Escriba la duración de la cancion en n:nn en estos terminos: ");
         String duracion1 = scan.nextLine();
+        System.out.println("");
+
         String seg[] = duracion1.split(":");
         int duracion = Integer.parseInt(seg[1]) + Integer.parseInt(seg[0]) * 60;
-        System.out.println("la cancion dura " + duracion + " segundos");
+
+        System.out.println("");
+        System.out.println("La cancion dura " + duracion + " segundos");
+        System.out.println("");
+        System.out.println("");
         System.out.print("Desea agregar la cancion a la cola de Reproduccion? (Si o No): ");
         String modificar = scan.nextLine();
+        System.out.println("");
 
         if (modificar.equals("No")) {
             cancion = new Cancion(titulo, artista, genero, duracion);
             CancionesCreadas.add(cancion);
+            System.out.println("");
             System.out.println("\nLa cancion no ha sido agregada a la cola de reproduccion");
+            System.out.println("");
 
         } else {
 
@@ -196,24 +334,35 @@ public class MenuSpotify {
             CancionesCreadas.add(cancion);
             colaReproduccion.add(cancion);
             canciones++;
+            System.out.println("");
             System.out.println("\nLa cancion ha sido agregada a la cola de reproduccion");
+            System.out.println("");
 
         }
 
     }
 
     public static void allCanciones() {
+
+        System.out.println("    LISTA DE CANCIONES");
         for (int i = 0; i < CancionesCreadas.size(); ++i) {
+            System.out.println("");
             System.out.println(i + 1 + ". " + CancionesCreadas.get(i).getTitulo());
         }
+        System.out.println("");
     }
 
     public static void elmCancion() {
         allCanciones();
+        System.out.println("");
         System.out.println("Ingrese el numero de la cancion que desea borrar");
         int posicionEliminar = scan.nextInt() - 1;
+        System.out.println("");
         scan.nextLine();
+
+        System.out.println("");
         System.out.println("La cancion " + CancionesCreadas.get(posicionEliminar).getTitulo() + " Ha sido eliminada");
+        System.out.println("");
         CancionesCreadas.remove(posicionEliminar);
     }
 
@@ -227,11 +376,14 @@ public class MenuSpotify {
         ArrayList<Cancion> Biblioteca = new ArrayList<>();
 
         allCanciones();
+
+        System.out.println("");
         System.out.println("Ingrese el numero de la cancion que quiere agregar a la Biblioteca del reproductor");
         @SuppressWarnings("unused")
         int aggBiblioteca = scan.nextInt() - 1;
         scan.nextLine(); 
         Biblioteca.add(cancion);
+        System.out.println("");
     }
 
 
@@ -243,17 +395,21 @@ public class MenuSpotify {
 
             scan.nextLine();
 
+            System.out.println("");
             System.out.print("Digite el nombre de la Playlist que desea crear: ");
             String nombrePlayList = scan.nextLine();
             System.out.println("");
 
+            System.out.println("");
             System.out.print("Digite el numero de canciones que desea agregar a su PlayList: ");
+            int cancionesPlayList = scan.nextInt();
+            System.out.println("");
 
-                int cancionesPlayList = scan.nextInt();
-                System.out.println("");
+            scan.nextLine();
 
-                scan.nextLine();
-                allCanciones();
+            System.out.println("");
+            allCanciones();
+            System.out.println("");
 
                 boolean comprobar = false;
 
@@ -263,7 +419,8 @@ public class MenuSpotify {
 
                         System.out.println("Digite el numero perteneciente a la cancion que desee agregar: ");
                         int cancionAgregada = scan.nextInt() - 1;
-                         scan.nextLine(); 
+                        scan.nextLine(); 
+                        System.out.println("");
 
                         if (cancionAgregada < 0) {
 
@@ -294,17 +451,15 @@ public class MenuSpotify {
 
             if (comprobar == false) {
 
-                Listas nuevaPlayList = new Listas(nombrePlayList, cancionAgregar);
+            Listas nuevaPlayList = new Listas(nombrePlayList, cancionAgregar);
 
             ListasCreadas.add(nuevaPlayList);
 
-
+            System.out.println("");
             System.out.println("Su PlayList fue guardada con exito");
             System.out.println("");
             
             }
-            
-
     }
 
     public static void ReproducirMusica() {
@@ -312,23 +467,50 @@ public class MenuSpotify {
             boolean salir = false; // Variable para controlar la salida del bucle
    
             while (!salir) { // Bucle para permitir interacción continua con el menú
-                System.out.println("1. Ingrese el título de la canción");
-                System.out.println("2. Buscar en la playlist");
-                System.out.println("0. salir");
+                System.out.println("");
+                System.out.println("\r\n" + //
+                                        "▄█\r\n" + //
+                                        " █   ▀▀   █ █▄ █ █▀▀ █▀█ █▀▀ █▀ █▀▀   █▀▀ █     ▀█▀ █ ▀█▀ █ █ █   █▀█   █▀▄ █▀▀   █   ▄▀█\r\n" + //
+                                        "▄█▄  ▀▀   █ █ ▀█ █▄█ █▀▄ ██▄ ▄█ ██▄   ██▄ █▄▄    █  █  █  █▄█ █▄▄ █▄█   █▄▀ ██▄   █▄▄ █▀█\r\n" + //
+                                        "\r\n" + //
+                                        "█▀▀ ▄▀█ █▄ █ █▀▀ █ █▀█ █▄ █\r\n" + //
+                                        "█▄▄ █▀█ █ ▀█ █▄▄ █ █▄█ █ ▀█");
+                System.out.println("");
+
+                System.out.println("");
+                System.out.println("\r\n" + //
+                                        "▄▄▄\r\n" + //
+                                        "▄▄█  ▀▀   █▄▄ █ █ █▀ █▀▀ ▄▀█ █▀█   █▀▀ █▄ █   █   ▄▀█   █▀█ █   ▄▀█ █▄█ █   █ █▀ ▀█\r\n" + //
+                                        "█▄▄  ▀▀   █▄█ █▄█ ▄█ █▄▄ █▀█ █▀▄   ██▄ █ ▀█   █▄▄ █▀█   █▀▀ █▄▄ █▀█  █  █▄▄ █ ▄█  █");
+                System.out.println("");
+
+
+                System.out.println("\r\n" + //
+                                        "▄▄▄\r\n" + //
+                                        "█ █  ▀▀   █▀ ▄▀█ █   █ █▀█\r\n" + //
+                                        "█▄█  ▀▀   ▄█ █▀█ █▄▄ █ █▀▄");
+                System.out.println("");
+
+                System.out.println("");
                 System.out.print("Ingrese su opción: ");
-   
                 String opcion = reproducir.nextLine();
+                System.out.println("");
    
                 switch (opcion) {
                     case "1":
+                        System.out.println("");
                         System.out.print("Ingrese el título de la canción: ");
                         String titulo = reproducir.nextLine();
+                        System.out.println("");
+
                         titulo = titulo + ".mp3";
                         Reproductor.EscucharCancion(titulo);             
                         break;
    
                     case "2":
+                        System.out.println("");
                         buscarEnPlaylist();
+                        System.out.println("");
                         break;
                     
                     case "0":
@@ -337,7 +519,9 @@ public class MenuSpotify {
                         break;
    
                     default:
+                        System.out.println("");
                         System.out.println("Opción no válida");
+                        System.out.println("");
                         break;
                 }
             }
@@ -346,17 +530,22 @@ public class MenuSpotify {
         MenuSpotify.Menu();
     }
 
-
+g
     public static void buscarEnPlaylist() {
         MostrarListas();
         
+        System.out.println("");
         System.out.print("Digite el número de la playlist en la cual desea buscar: ");
         int indicePlaylist = scan.nextInt() - 1;
         scan.nextLine(); // Limpiar el buffer
+        System.out.println("");
         
         if (indicePlaylist >= 0 && indicePlaylist < ListasCreadas.size()) {
             Listas selectedPlaylist = ListasCreadas.get(indicePlaylist);
+
+            System.out.println("");
             System.out.println("PlayList seleccionada: " + selectedPlaylist.getNombreLista());
+            System.out.println("");
             
             ArrayList<String> nombresCanciones = new ArrayList<>();
             for (Cancion cancion : selectedPlaylist.getListaGuardado()) {
@@ -369,7 +558,9 @@ public class MenuSpotify {
             }
             
         } else {
+            System.out.println("");
             System.out.println("Número de playlist no válido.");
+            System.out.println("");
         }
     }
     
@@ -378,10 +569,14 @@ public class MenuSpotify {
     
 
     public static void agregarCancionesAPlaylistExistente() {
+        System.out.println("");
         MostrarListas();
+
+        System.out.println("");
         System.out.print("Digite el número de la lista de reproducción a la que desea agregar canciones: ");
         int indiceLista = scan.nextInt() - 1;
         scan.nextLine(); // Limpiar el buffer
+        System.out.println("");
 
         if (indiceLista < 0 || indiceLista >= ListasCreadas.size()) {
             System.out.println("Número de lista de reproducción no válido.");
@@ -389,24 +584,34 @@ public class MenuSpotify {
         }
 
         Listas listaSeleccionada = ListasCreadas.get(indiceLista);
+        System.out.println("");
         mostrarCanciones();
+        System.out.println("");
 
+        System.out.println("");
         System.out.print("Digite el número de la canción que desea agregar a la lista de reproducción: ");
         int indiceCancion = scan.nextInt() - 1;
         scan.nextLine(); // Limpiar el buffer
+        System.out.println("");
 
         if (indiceCancion < 0 || indiceCancion >= CancionesCreadas.size()) {
+            System.out.println("");
             System.out.println("Número de canción no válido.");
+            System.out.println("");
             return;
         }
 
         Cancion cancionSeleccionada = CancionesCreadas.get(indiceCancion);
         listaSeleccionada.agregarCancion(cancionSeleccionada);
+        System.out.println("");
         System.out.println("La canción se ha agregado exitosamente a la lista de reproducción.");
+        System.out.println("");
     }
 
     public static void mostrarCanciones() {
-        System.out.println("Canciones disponibles:");
+        System.out.println("        Canciones Disponibles");
+        System.out.println("");
+
         for (int i = 0; i < CancionesCreadas.size(); i++) {
             System.out.println((i + 1) + ". " + CancionesCreadas.get(i).getTitulo());
         }
@@ -440,12 +645,12 @@ public class MenuSpotify {
 
         if (modificar.equals("No")) {
 
-
+            System.out.println("");
             System.out.println("Volviendo al Menu...");
             System.out.println("");
 
         } else {
-
+            System.out.println("");
             System.out.print("Digite el numero de la PlayList a la cual desea acceder: ");
             int playListContenido = scan.nextInt() - 1;
             System.out.println("");
