@@ -1,12 +1,14 @@
 //Yefry Esteban Avila Zuluaga - 506232728
 //Camilo Andres Estrada Vanegas - 506232719
-//Santiago Steven Sanchez Barbosa - 614 272708
+//Santiago Steven Sanchez Barbosa - 614272708
 
 
 package src.Spotify;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.List;
 
 public class MenuSpotify {
 
@@ -15,11 +17,13 @@ public class MenuSpotify {
     static ArrayList<Cancion> colaReproduccion = new ArrayList<>();
     static ArrayList<Cancion> CancionesCreadas = new ArrayList<>();
     static ArrayList<Listas> ListasCreadas = new ArrayList<>(); // Guardar las listas de reproduccion
+    static HashMap<String, ArrayList<Cancion>> generosListas = new HashMap<>(); // HashMap para géneros y listas de canciones
     
     static int canciones;
      static boolean continuar = true;
 
     public static void main(String[] args) throws Exception {
+
 
         String nombreString = "Biblioteca";
         Listas biblioteca = new Listas(nombreString, CancionesCreadas);
@@ -68,6 +72,7 @@ public class MenuSpotify {
             System.out.println("6 = Mostrar listas creadas");
             System.out.println("7 = Mostrar Todas las canciones(solo el nombre)");
             System.out.println("8 = Guardar cancion el lista");
+            System.out.println("9 = Buscar por genero");
             System.out.println("____________________________________________________________________");
             System.out.println("");
             System.out.print("Digite el procedimiento que desee realizar: ");
@@ -156,6 +161,25 @@ public class MenuSpotify {
                 agregarCancionesAPlaylistExistente();
                 break;
 
+                case 9:
+
+                System.out.println("Escriba el genero");
+                String genero = scan.nextLine();
+                buscarPorGenero(genero);
+
+                case 10:
+
+
+                // Cargar canciones
+        Reproductor.cargarCanciones();
+
+        // Obtener recomendaciones y reproducirlas
+        List<String> recomendados = Reproductor.recomendaciones();
+        Reproductor.reproducirPlaylist(recomendados);
+        
+                break;
+
+
             default:
 
                 System.out.println("IMPORTANTE: Opcion Invalida, intentelo nuevamente en el rango de 0 a 8");
@@ -177,6 +201,8 @@ public class MenuSpotify {
         System.out.print("Escriba el genero de la cancion: ");
         String genero = scan.nextLine();
 
+        agregarGenero(genero);
+
         System.out.print("Escriba la duración de la cancion en n:nn en estos terminos: ");
         String duracion1 = scan.nextLine();
         String seg[] = duracion1.split(":");
@@ -184,8 +210,9 @@ public class MenuSpotify {
         System.out.println("la cancion dura " + duracion + " segundos");
         System.out.print("Desea agregar la cancion a la cola de Reproduccion? (Si o No): ");
         String modificar = scan.nextLine();
+        modificar = modificar.toLowerCase();
 
-        if (modificar.equals("No")) {
+        if (modificar.equals("no")) {
             cancion = new Cancion(titulo, artista, genero, duracion);
             CancionesCreadas.add(cancion);
             System.out.println("\nLa cancion no ha sido agregada a la cola de reproduccion");
@@ -199,6 +226,12 @@ public class MenuSpotify {
             System.out.println("\nLa cancion ha sido agregada a la cola de reproduccion");
 
         }
+
+        ArrayList<Cancion> cancionesPorGenero = generosListas.get(genero);
+
+        cancionesPorGenero.add(cancion);
+
+        generosListas.put(genero, cancionesPorGenero);
 
     }
 
@@ -303,6 +336,9 @@ public class MenuSpotify {
             System.out.println("");
             
             }
+
+            Reproductor.recomendaciones();
+            
             
 
     }
@@ -461,6 +497,62 @@ public class MenuSpotify {
 
 
     }
+
+
+    public static void agregarGenero(String genero) {
+
+        // Verificar si el género está presente en el HashMap, de lo contrario, agregarlo automáticamente
+
+        if (!generosListas.containsKey(genero)) {
+
+            generosListas.put(genero, new ArrayList<>());
+
+            System.out.println("Se agregó automáticamente el género " + genero + " a la lista de géneros.");
+        }
+    }
+
+    public static void buscarPorGenero(String genero) {
+
+        if (generosListas.containsKey(genero)) {
+
+            ArrayList<Cancion> cancionesPorGenero = generosListas.get(genero);
+            
+            System.out.println("Canciones del género " + genero + ":");
+            for (int i = 0; i < cancionesPorGenero.size(); i++) {
+                Cancion cancion = cancionesPorGenero.get(i);
+
+                System.out.println((i + 1) + ". " + cancion.getTitulo());
+            }
+            
+            // Solicitar al usuario que elija una canción por su número de referencia
+            System.out.print("Seleccione una canción por su número de referencia para reproducirla: ");
+            int opcion = scan.nextInt();
+            
+
+            if (opcion >= 1 && opcion <= cancionesPorGenero.size()) {
+                
+                Cancion cancionSeleccionada = cancionesPorGenero.get(opcion - 1);
+                String tituloCancionSeleccionada = cancionesPorGenero.get(opcion - 1).getTitulo();
+
+                Reproductor.EscucharCancion(tituloCancionSeleccionada);
+                
+                // Realizar acciones sobre la canción seleccionada (por ejemplo, reproducirla)
+                // Puedes implementar estas acciones según tus necesidades
+                System.out.println("Ha seleccionado la canción: " + cancionSeleccionada.getTitulo());
+                // Aquí puedes agregar el código para reproducir la canción, agregarla a una lista, etc.
+            } else {
+                // Si la opción ingresada no es válida, mostrar un mensaje de error
+                System.out.println("Opción no válida. Por favor, seleccione un número de referencia válido.");
+            }
+        } else {
+            // Si el género no está presente en el HashMap, mostrar un mensaje de error
+            System.out.println("El género " + genero + " no tiene canciones asociadas.");
+        }
+    }
+    
+    
+    
+
 
 
 }

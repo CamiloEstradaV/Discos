@@ -25,6 +25,8 @@ public class Reproductor {
     private static List <String> recomendados = new ArrayList<>();
     private static float volumen = 0.5f;
     private static String titulo;
+    private static int indiceRecomendado = 0;
+    
     
     
         /*cargarCanciones(); 
@@ -147,12 +149,6 @@ public class Reproductor {
         }
     }
 
-    public static void reproducirPlaylist(ArrayList<String> playlist) {
-        for (String nombreCancion : playlist) {
-            reproducirCancion(nombreCancion);
-        }
-    }
-
     public static void detenerReproduccion() {
         if (mp3Player != null) {
             mp3Player.stop(); 
@@ -234,18 +230,7 @@ public class Reproductor {
         }
     }
     
-    public static void recomendaciones() {
-        Set<String> cancionesUnicas = new HashSet<>();
-
-        while (cancionesUnicas.size() < 12 && cancionesUnicas.size() < playlist.size()) {
-            int cancionRandom = (int) (Math.random() * playlist.size());
-            cancionesUnicas.add(playlist.get(cancionRandom));
-        }
-
-        recomendados.addAll(cancionesUnicas);
-    }
-
-
+        
     public static void EscucharCancion(String titulo) {
         cargarCanciones();
         
@@ -265,6 +250,91 @@ public class Reproductor {
             System.out.println("La canción " + titulo + " no se encuentra en la carpeta o no es un archivo .mp3.");
         }
     }
-    
 
+    public static List<String> recomendaciones() {
+        List<String> recomendados = new ArrayList<>(); // Crear una lista para almacenar las canciones recomendadas
+        
+        // Generar recomendaciones
+        Set<String> cancionesUnicas = new HashSet<>();
+        while (cancionesUnicas.size() < 12 && cancionesUnicas.size() < playlist.size()) {
+            int cancionRandom = (int) (Math.random() * playlist.size());
+            cancionesUnicas.add(playlist.get(cancionRandom));
+            recomendados.add(playlist.get(cancionRandom));
+        }
+    
+        // Agregar todas las canciones recomendadas a la lista de recomendados
+        recomendados.addAll(cancionesUnicas);
+        
+        return recomendados; // Devolver la lista de canciones recomendadas
+    }
+
+
+    public static void reproducirPlaylist(List<String> playlist) {
+        reproducirCancion(playlist.get(indice)); // Reproduce la canción actual de la lista de reproducción
+        bucleMenuPlaylist();
+    }
+    
+    public static void siguienteCancionPlaylist() {
+        if (indice < recomendados.size() - 1) {
+            indice++; 
+            reproducirCancion(recomendados.get(indice)); // Reproduce la siguiente canción de la lista de reproducción
+        } else {
+            System.out.println("Ya estás en la última canción de la lista de reproducción.");
+        }
+    }
+    
+    public static void bucleMenuPlaylist() {
+        boolean continuar = true; 
+        
+        while (continuar) { 
+            mostrarMenu();
+            
+            int opcion = Integer.parseInt(scanner.nextLine()); 
+            
+            switch (opcion) {
+                case 1:
+                    if (pausa) {
+                        reanudarCancion(); 
+                    } else {
+                        pausarReproduccion(); 
+                    }
+                    break;
+    
+                case 2:
+                    if (reproducir) {
+                        reproducirPlaylist(playlist); // Esto reproducirá solo la canción actual
+                    } else {
+                        detenerReproduccion(); 
+                    }
+                    break;
+    
+                case 3:
+                    siguienteCancionPlaylist(); // Reproduce la siguiente canción de la lista de reproducción
+                    break;
+    
+                case 4:
+                    cancionAnterior(); 
+                    break;
+    
+                case 5:
+                    cambiarVolumen(volumen + 0.1f);
+                    break;
+    
+                case 6:
+                    cambiarVolumen(volumen - 0.1f);
+                    break;
+    
+                case 0:
+                    detenerReproduccion(); 
+                    System.out.println("Volviendo al menú principal...");
+                    continuar = false; 
+                    titulo = null;
+                    break;
+    
+                default:
+                    System.out.println("Opción no válida");
+            }
+        }
+    }
 }
+    
